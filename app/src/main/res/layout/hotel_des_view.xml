@@ -10,51 +10,68 @@
        android:layout_width="match_parent"
        android:layout_height="250dp"
        app:cardCornerRadius="10dp"
-       android:backgroundTint="@color/black"
        android:layout_margin="10dp">
 
        <androidx.constraintlayout.widget.ConstraintLayout
            android:layout_width="match_parent"
            android:layout_height="match_parent" >
 
+           <androidx.cardview.widget.CardView
+               android:layout_width="match_parent"
+               android:layout_height="200dp"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toTopOf="parent">
+
+               <ImageView
+                   android:id="@+id/img"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:scaleType="fitXY"
+                   android:src="@drawable/sback" />
+
+
+               <TextView
+                   android:id="@+id/rating"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginLeft="320dp"
+                   android:layout_marginTop="10dp"
+                   android:layout_marginRight="16dp"
+                   android:layout_marginBottom="16dp"
+                   android:text="rating"
+                   android:textSize="20sp"
+                   android:textStyle="bold"
+                   app:layout_constraintBottom_toBottomOf="parent"
+                   app:layout_constraintEnd_toEndOf="parent" />
+
+
+           </androidx.cardview.widget.CardView>
+
+
            <TextView
                android:id="@+id/des"
                android:layout_width="224dp"
                android:layout_height="46dp"
-               android:layout_marginStart="16dp"
-               android:layout_marginBottom="64dp"
+               android:layout_marginStart="4dp"
+               android:layout_marginBottom="4dp"
                android:text="Hotel Name"
-               android:textColor="@color/white"
-               android:textColorHint="@color/white"
                android:textSize="30dp"
                app:layout_constraintBottom_toBottomOf="parent"
                app:layout_constraintStart_toStartOf="parent" />
-
-           <TextView
-               android:id="@+id/rating"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:text="rating"
-               android:textColor="@color/white"
-               android:textSize="16sp"
-               android:layout_marginRight="16dp"
-               android:layout_marginBottom="16dp"
-               app:layout_constraintBottom_toBottomOf="parent"
-               app:layout_constraintEnd_toEndOf="parent" />
 
            <TextView
                android:id="@+id/price"
                android:layout_width="106dp"
                android:layout_height="33dp"
                android:text="price"
-               android:textColor="@color/white"
-               android:textSize="16sp"
+               android:textSize="20sp"
+               android:textAlignment="center"
                app:layout_constraintBottom_toBottomOf="parent"
                app:layout_constraintEnd_toEndOf="parent"
-               app:layout_constraintHorizontal_bias="0.094"
+               app:layout_constraintHorizontal_bias="0.944"
                app:layout_constraintStart_toStartOf="parent"
                app:layout_constraintTop_toTopOf="parent"
-               app:layout_constraintVertical_bias="0.17" />
+               app:layout_constraintVertical_bias="0.981" />
 
        </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -76,3 +93,76 @@
 <!--    </androidx.cardview.widget.CardView>-->
 
 </LinearLayout>
+
+
+<!--    <?xml version="1.0" encoding="utf-8"?>-->
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--xmlns:tools="http://schemas.android.com/tools"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="wrap_content"-->
+<!--xmlns:app="http://schemas.android.com/apk/res-auto">-->
+
+
+<!--<androidx.cardview.widget.CardView-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="250dp"-->
+<!--    app:cardCornerRadius="20dp"-->
+<!--    android:src="@drawable/sback"-->
+<!--    android:layout_margin="10dp">-->
+
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent" >-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/img"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:src="@drawable/sback"-->
+<!--            android:scaleType="fitXY"/>-->
+
+<!--        <FrameLayout-->
+<!--            android:id="@+id/frameLayout"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="80dp"-->
+<!--            android:background="@drawable/frame_back"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/img"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="1.0"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/img"-->
+<!--            app:layout_constraintVertical_bias="1.0" >-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/city"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:layout_marginStart="20dp"-->
+<!--                android:text="name"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textAlignment="center"-->
+<!--                android:textSize="30dp"-->
+<!--                android:textStyle="bold" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/des"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="30dp"-->
+<!--                android:textAlignment="center"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:text="des"-->
+<!--                android:textSize="20dp"-->
+<!--                android:textStyle="bold"-->
+<!--                android:layout_marginTop="40dp"-->
+<!--                android:layout_marginStart="20dp" />-->
+
+<!--        </FrameLayout>-->
+
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--</androidx.cardview.widget.CardView>-->
+
+
+<!--</LinearLayout>-->

@@ -16,7 +16,7 @@ import com.example.findyourspot.Adapter.HotelAdapter
 import com.example.findyourspot.DataClass.FlightDetails
 import com.example.findyourspot.DataClass.HotelClass
 import com.example.findyourspot.databinding.FragmentFlightsBinding
-import com.example.findyourspot.other.DetailPass
+import com.example.findyourspot.other.Constants
 import okhttp3.Request
 import org.json.JSONException
 import org.json.JSONObject
@@ -25,16 +25,16 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.io.IOException
 
-class FlightsFragment : Fragment(), DetailPass {
+class FlightsFragment : Fragment() {
 
     private lateinit var binding: FragmentFlightsBinding
     private lateinit var adapter: FlightsAdapter
     private lateinit var flightlist: List<FlightDetails>
-    private lateinit var YourDesti:String
-    private lateinit var YourHome:String
-    private lateinit var YourDate:AppCompatButton
-    private lateinit var YourRating:String
-    private lateinit var YourSeason:String
+    private  var YourDesti:String = Constants.city
+    private  var YourHome:String = Constants.scrCity
+    private  var YourDate:String = Constants.Date
+    private  var YourRating:String = Constants.rating
+    private  var YourSeason:String = Constants.season
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,7 +50,7 @@ class FlightsFragment : Fragment(), DetailPass {
     }
 
     private fun fetchDataFromAPI() {
-        val url = "http://192.168.172.60:4000/flight?des=$YourDesti&src=$YourHome"
+        val url = "http://192.168.92.57:4000/flight?des=$YourDesti&src=$YourHome"
         val requestQueue = Volley.newRequestQueue(requireContext())
 
         val jsonObjectRequest = JsonObjectRequest(
@@ -87,20 +87,6 @@ class FlightsFragment : Fragment(), DetailPass {
         )
 
         requestQueue.add(jsonObjectRequest)
-    }
-
-    override fun onDataPassed(
-        city: String,
-        season: String,
-        Date: AppCompatButton,
-        rating: String,
-        scrCity: String
-    ) {
-        YourDesti = city
-        YourHome = scrCity
-        YourDate = Date
-        YourRating = rating
-        YourSeason = season
     }
 
 

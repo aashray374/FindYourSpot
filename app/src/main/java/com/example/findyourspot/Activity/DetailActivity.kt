@@ -8,12 +8,11 @@ import android.widget.DatePicker
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
 import com.example.findyourspot.databinding.ActivityDetailBinding
-import com.example.findyourspot.other.DetailPass
+import com.example.findyourspot.other.Constants
 import java.util.Calendar
 
-class DetailActivity : AppCompatActivity(), DetailPass {
+class DetailActivity : AppCompatActivity() {
 
-    private lateinit var dataPassListener: DetailPass
     private lateinit var binding: ActivityDetailBinding
     private lateinit var calendar: Calendar
 
@@ -55,24 +54,16 @@ class DetailActivity : AppCompatActivity(), DetailPass {
                     Toast.makeText(this, "Please Select a Date", Toast.LENGTH_SHORT).show()
                 } else {
                     startActivity(Intent(this, MainActivity::class.java))
-                    dataPassListener.onDataPassed(
-                        binding.city.text.toString(),
-                        season,
-                        binding.Date,
-                        binding.rating.text.toString(),
-                        binding.scrCity.text.toString()
-                    )
+
+                      Constants.city = binding.city.text.toString()
+                      Constants.season = season
+                      Constants.Date =  binding.Date.text.toString()
+                      Constants.rating= binding.rating.text.toString()
+                      Constants.scrCity=  binding.scrCity.text.toString()
+
                 }
             }
         }
     }
 
-    override fun onDataPassed(
-        city: String,
-        season: String,
-        Date: AppCompatButton,
-        rating: String,
-        scrCity: String
-    ) {
-    }
 }

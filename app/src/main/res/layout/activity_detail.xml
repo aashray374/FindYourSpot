@@ -36,7 +36,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="20dp"
-                    android:layout_marginTop="35dp">
+                    android:layout_marginTop="15dp">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/scr_city"
@@ -52,7 +52,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="20dp"
-                    android:layout_marginTop="35dp">
+                    android:layout_marginTop="15dp">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/city"
@@ -79,21 +79,21 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginHorizontal="20dp">
+<!--                <com.google.android.material.textfield.TextInputLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="15dp"-->
+<!--                    android:layout_marginHorizontal="20dp">-->
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/startCity"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:drawablePadding="8dp"
-                        android:hint="Start City"
-                        android:inputType="text" />
+<!--                    <com.google.android.material.textfield.TextInputEditText-->
+<!--                        android:id="@+id/startCity"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:drawablePadding="8dp"-->
+<!--                        android:hint="Start City"-->
+<!--                        android:inputType="text" />-->
 
-                </com.google.android.material.textfield.TextInputLayout>
+<!--                </com.google.android.material.textfield.TextInputLayout>-->
 
 
                 <androidx.appcompat.widget.AppCompatButton

@@ -17,23 +17,23 @@ import com.example.findyourspot.Adapter.HotelAdapter
 import com.example.findyourspot.DataClass.HotelClass
 import com.example.findyourspot.R
 import com.example.findyourspot.databinding.FragmentHotelsBinding
-import com.example.findyourspot.other.DetailPass
+import com.example.findyourspot.other.Constants
 import okhttp3.*
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
 import java.io.IOException
 
-class HotelsFragment : Fragment(),DetailPass {
+class HotelsFragment : Fragment(){
 
     private lateinit var binding: FragmentHotelsBinding
     private lateinit var hotelAdapter: HotelAdapter
     private lateinit var hotelList: List<HotelClass>
-    private lateinit var YourDesti:String
-    private lateinit var YourHome:String
-    private lateinit var YourDate:AppCompatButton
-    private lateinit var YourRating:String
-    private lateinit var YourSeason:String
+    private  var YourDesti:String = Constants.city
+    private  var YourHome:String = Constants.scrCity
+    private  var YourDate:String = Constants.Date
+    private  var YourRating:String = Constants.rating
+    private  var YourSeason:String = Constants.season
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -54,7 +54,7 @@ class HotelsFragment : Fragment(),DetailPass {
     }
 
     private fun fetchDataFromAPI() {
-        val url = "http://192.168.172.60:4000/hotel?city=$YourDesti"
+        val url = "http://192.168.92.57:4000/hotel?city=$YourDesti"
         val requestQueue = Volley.newRequestQueue(requireContext())
 
         val jsonObjectRequest = JsonObjectRequest(
@@ -92,17 +92,4 @@ class HotelsFragment : Fragment(),DetailPass {
         requestQueue.add(jsonObjectRequest)
     }
 
-    override fun onDataPassed(
-        city: String,
-        season: String,
-        Date: AppCompatButton,
-        rating: String,
-        scrCity: String
-    ) {
-        YourDesti = city
-        YourHome = scrCity
-        YourDate = Date
-        YourRating = rating
-        YourSeason = season
-    }
 }

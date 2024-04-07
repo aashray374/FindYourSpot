@@ -19,19 +19,19 @@ import com.example.findyourspot.DataClass.PlacesClass
 import com.example.findyourspot.R
 import com.example.findyourspot.databinding.FragmentHotelsBinding
 import com.example.findyourspot.databinding.FragmentLocationDetailsBinding
-import com.example.findyourspot.other.DetailPass
+import com.example.findyourspot.other.Constants
 import org.json.JSONException
 
-class LocationDetailsFragment : Fragment() , DetailPass {
+class LocationDetailsFragment : Fragment(){
 
     private lateinit var binding: FragmentLocationDetailsBinding
     private lateinit var adapter: PlaceAdapter
     private lateinit var placeList: List<PlacesClass>
-    private lateinit var YourDesti:String
-    private lateinit var YourHome:String
-    private lateinit var YourDate:AppCompatButton
-    private lateinit var YourRating:String
-    private lateinit var YourSeason:String
+    private  var YourDesti:String = Constants.city
+    private  var YourHome:String = Constants.scrCity
+    private  var YourDate:String = Constants.Date
+    private  var YourRating:String = Constants.rating
+    private  var YourSeason:String = Constants.season
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -52,7 +52,7 @@ class LocationDetailsFragment : Fragment() , DetailPass {
     }
 
     private fun fetchDataFromAPI() {
-        val url = "http://192.168.172.60:4000/place?city=$YourDesti"
+        val url = "http://192.168.92.57:4000/place?city=$YourDesti"
         val requestQueue = Volley.newRequestQueue(requireContext())
 
         val jsonObjectRequest = JsonObjectRequest(
@@ -65,10 +65,10 @@ class LocationDetailsFragment : Fragment() , DetailPass {
                     val tempList = mutableListOf<PlacesClass>()
                     for (i in 0 until dataArray.length()) {
                         val hotelObject = dataArray.getJSONObject(i)
-                        val des = hotelObject.getString("description")
+//                        val des = hotelObject.getString("description")
                         val place = hotelObject.getString("place")
                         val img = hotelObject.getString("img")
-                        val hotel = PlacesClass(des, place, img)
+                        val hotel = PlacesClass( place, img)
                         tempList.add(hotel)
                     }
                     placeList = tempList
@@ -89,19 +89,6 @@ class LocationDetailsFragment : Fragment() , DetailPass {
         requestQueue.add(jsonObjectRequest)
     }
 
-    override fun onDataPassed(
-        city: String,
-        season: String,
-        Date: AppCompatButton,
-        rating: String,
-        scrCity: String
-    ) {
-        YourDesti = city
-        YourHome = scrCity
-        YourDate = Date
-        YourRating = rating
-        YourSeason = season
-    }
 
 
 }

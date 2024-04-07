@@ -18,7 +18,7 @@ class PlaceAdapter(
 ): RecyclerView.Adapter<PlaceAdapter.ViewHolder>() {
 
     inner class ViewHolder(view: View):RecyclerView.ViewHolder(view){
-        val des: TextView = view.findViewById(R.id.des)
+//        val des: TextView = view.findViewById(R.id.des)
         val city: TextView = view.findViewById(R.id.city)
         val img: ImageView = view.findViewById(R.id.img)
     }
@@ -34,7 +34,7 @@ class PlaceAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val hotel = list[position]
-        holder.des.text = hotel.des
+//        holder.des.text = hotel.des
         holder.city.text = hotel.place
 
         Glide
