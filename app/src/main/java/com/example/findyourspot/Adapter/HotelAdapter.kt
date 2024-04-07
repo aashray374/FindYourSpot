@@ -8,11 +8,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.findyourspot.DataClass.HotelClass
+import com.example.findyourspot.DataClass.HotelsList
 import com.example.findyourspot.R
 
 class HotelAdapter(
     val context: Context,
-    val list: MutableList<HotelClass>
+    val list: HotelsList
 ): RecyclerView.Adapter<HotelAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){

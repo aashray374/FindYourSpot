@@ -7,11 +7,12 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
 
+//      https://test.api.amadeus.com/v1/reference-data/locations/hotels/by-city?cityCode=JBP&radius=5&radiusUnit=KM&hotelSource=ALL
 
-const val BASE_URL=""
-const val API_KEY=""
+const val BASE_URL="test.api.amadeus.com"
+const val API_KEY="GOqJZc7HbKcfzhnWGavbpOSc92INpRz7"
 interface HotelsInterface {
-    @GET("")
+    @GET(" https://test.api.amadeus.com/v1/reference-data/locations/hotels/by-city?")
     fun getHotels(
         @Query("City") city:String,
     ):Call<HotelsList>

@@ -11,18 +11,21 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.findyourspot.DataClass.FlightList
 import com.example.findyourspot.Interface.FlightService
 import com.example.findyourspot.R
+import com.example.findyourspot.databinding.FragmentFlightsBinding
 import com.example.findyourspot.other.DetailPass
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class FlightsFragment : Fragment(), DetailPass {
+    private lateinit var binding: FragmentFlightsBinding
 override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         getFlights()
-        return inflater.inflate(R.layout.fragment_flights, container, false)
+    binding=FragmentFlightsBinding.inflate(layoutInflater,container,false)
+        return binding.root
     }
 
     private fun getFlights(){
@@ -31,9 +34,7 @@ override fun onCreateView(
             override fun onResponse(call: Call<FlightList>, response: Response<FlightList>) {
                 val news=response.body()
                 if (news!=null){
-//                    adapter= NewsAdapter(this@MainActivity,news.articles)
-//                    rv.adapter=adapter
-//                    rv.layoutManager= LinearLayoutManager(this@MainActivity)
+
 
                 }
             }
