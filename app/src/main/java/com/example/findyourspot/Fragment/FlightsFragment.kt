@@ -54,7 +54,7 @@ class FlightsFragment : Fragment(), DetailPass {
     }
 
     private fun fetchDataFromAPI() {
-        val url = "http://192.168.172.60:4000/flight?des=&src="
+        val url = "http://192.168.92.57:4000/flight?des=Munnar&src=Chennai"
         val requestQueue = Volley.newRequestQueue(requireContext())
 
         val jsonObjectRequest = JsonObjectRequest(
@@ -69,7 +69,7 @@ class FlightsFragment : Fragment(), DetailPass {
                         val hotelObject = dataArray.getJSONObject(i)
                         val price = hotelObject.getString("price").toString()
                         val src = hotelObject.getString("src").toString()
-                        val des = hotelObject.getInt("des").toString()
+                        val des = hotelObject.getString("des").toString()
                         val time = hotelObject.getString("time").toString()
                         val hotel = FlightDetails(des,src,price,time)
                         tempList.add(hotel)

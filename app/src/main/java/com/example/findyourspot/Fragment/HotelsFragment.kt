@@ -54,7 +54,7 @@ class HotelsFragment : Fragment(),DetailPass {
     }
 
     private fun fetchDataFromAPI() {
-        val url = "http://192.168.172.60:4000/hotel?city=Santorini"
+        val url = "http://192.168.92.57:4000/hotel?city=Santorini"
         val requestQueue = Volley.newRequestQueue(requireContext())
 
         val jsonObjectRequest = JsonObjectRequest(
