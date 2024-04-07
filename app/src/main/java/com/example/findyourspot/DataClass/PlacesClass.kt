@@ -1,4 +1,7 @@
 package com.example.findyourspot.DataClass
 
-class PlacesClass {
-}
+data class PlacesClass(
+    val des:String,
+    val place:String,
+    val img:String
+)

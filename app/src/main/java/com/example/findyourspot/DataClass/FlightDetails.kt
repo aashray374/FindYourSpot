@@ -4,5 +4,6 @@ data class FlightDetails(
     val des:String,
     val src:String,
     val price:String,
-    val time:String
+    val time:String,
+    val date:String
 )

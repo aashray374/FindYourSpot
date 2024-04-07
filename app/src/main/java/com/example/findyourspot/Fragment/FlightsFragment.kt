@@ -39,22 +39,18 @@ class FlightsFragment : Fragment(), DetailPass {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-    binding=FragmentFlightsBinding.inflate(layoutInflater,container,false)
-
-
+    ): View {
+        binding=FragmentFlightsBinding.inflate(layoutInflater,container,false)
         Toast.makeText(requireContext(), "yoyoyoy", Toast.LENGTH_SHORT).show()
 
-        // Initialize the RecyclerView
         binding.flightRv.layoutManager = LinearLayoutManager(requireContext())
 
-        // Fetch data from the API
         fetchDataFromAPI()
        return binding.root
     }
 
     private fun fetchDataFromAPI() {
-        val url = "http://192.168.92.57:4000/flight?des=Munnar&src=Chennai"
+        val url = "http://192.168.172.60:4000/flight?des=$YourDesti&src=$YourHome"
         val requestQueue = Volley.newRequestQueue(requireContext())
 
         val jsonObjectRequest = JsonObjectRequest(
@@ -68,10 +64,11 @@ class FlightsFragment : Fragment(), DetailPass {
                     for (i in 0 until dataArray.length()) {
                         val hotelObject = dataArray.getJSONObject(i)
                         val price = hotelObject.getString("price").toString()
-                        val src = hotelObject.getString("src").toString()
-                        val des = hotelObject.getString("des").toString()
+                        val src = YourHome
+                        val des = YourDesti
                         val time = hotelObject.getString("time").toString()
-                        val hotel = FlightDetails(des,src,price,time)
+                        val date = YourDate.toString()
+                        val hotel = FlightDetails(des,src,price,time,date)
                         tempList.add(hotel)
                     }
                     flightlist = tempList
