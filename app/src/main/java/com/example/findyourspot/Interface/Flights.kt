@@ -1,6 +1,5 @@
 package com.example.findyourspot.Interface
 
-import com.example.findyourspot.DataClass.FlightList
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

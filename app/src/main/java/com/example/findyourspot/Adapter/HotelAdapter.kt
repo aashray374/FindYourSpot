@@ -13,16 +13,17 @@ import com.example.findyourspot.R
 
 class HotelAdapter(
     val context: Context,
-    val list: HotelsList
+    val list: MutableList<HotelsList>
 ): RecyclerView.Adapter<HotelAdapter.ViewHolder>() {
 
-    inner class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
-//        val image: ImageView = itemView.findViewById(R.id.statusProfile)
-//        val name: TextView = itemView.findViewById(R.id.statusName)
+    inner class ViewHolder(view: View):RecyclerView.ViewHolder(view){
+        val des: TextView = view.findViewById(R.id.des)
+        val src: TextView = view.findViewById(R.id.rating)
+        val price: TextView = view.findViewById(R.id.price)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.hotel_des_view,parent,false)
+        val view = LayoutInflater.from(context).inflate(R.layout.hotel_des_view, parent, false)
         return ViewHolder(view)
     }
 
@@ -31,13 +32,11 @@ class HotelAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-//        Glide.with(context)
-//            .load(list[position].image)
-//            .thumbnail(0.1f)
-//            .diskCacheStrategy(DiskCacheStrategy.ALL)
-//            .into(holder.image)
-//
-//        holder.name.text = list[position].name
+        val hotelList = list[position]
+        for (hotel in hotelList.hotels) {
+            holder.des.text = hotel.name
+            holder.src.text = hotel.rating
+            holder.price.text = hotel.price_per_night
+        }
     }
-
 }

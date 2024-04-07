@@ -7,10 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatButton
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.findyourspot.DataClass.FlightList
+import com.example.findyourspot.DataClass.FlightDetails
 import com.example.findyourspot.Interface.FlightService
-import com.example.findyourspot.R
 import com.example.findyourspot.databinding.FragmentFlightsBinding
 import com.example.findyourspot.other.DetailPass
 import retrofit2.Call
@@ -18,27 +16,30 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class FlightsFragment : Fragment(), DetailPass {
+
     private lateinit var binding: FragmentFlightsBinding
-override fun onCreateView(
+    override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        getFlights()
     binding=FragmentFlightsBinding.inflate(layoutInflater,container,false)
-        return binding.root
+
+    getFlights()
+
+    return binding.root
     }
 
     private fun getFlights(){
         val flight=FlightService.FlightInstance.getTransport("","","")
-        flight.enqueue(object : Callback<FlightList> {
-            override fun onResponse(call: Call<FlightList>, response: Response<FlightList>) {
+        flight.enqueue(object : Callback<FlightDetails> {
+            override fun onResponse(call: Call<FlightDetails>, response: Response<FlightDetails>) {
                 val news=response.body()
                 if (news!=null){
 
 
                 }
             }
-            override fun onFailure(call: Call<FlightList>, t: Throwable) {
+            override fun onFailure(call: Call<FlightDetails>, t: Throwable) {
                 Log.d("Thodi BT ho gyi hai","Error")
             }
 

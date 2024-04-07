@@ -1,8 +1,8 @@
 package com.example.findyourspot.DataClass
 
 data class FlightDetails(
-    val destination:String,
-    val startCity:String,
-    val date:String,
+    val des:String,
+    val src:String,
+    val price:String,
     val time:String
 )
