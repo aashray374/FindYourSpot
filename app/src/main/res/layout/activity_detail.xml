@@ -34,6 +34,23 @@
                 android:layout_margin="16dp"
                 android:orientation="vertical">
 
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="35dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/scr_city"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="8dp"
+                        android:hint="Enter Your City Name"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:inputType="text" />
+                </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -47,7 +64,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawablePadding="8dp"
-                        android:hint="Enter Your City Name"
+                        android:hint="Enter Your des Name"
                         android:textColor="@color/white"
                         android:textColorHint="@color/white"
                         android:inputType="text" />

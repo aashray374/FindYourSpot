@@ -20,7 +20,13 @@ class LocationDetailsFragment : Fragment() , DetailPass {
 
     }
 
-    override fun onDataPassed(city: String, season: String, Date: AppCompatButton, rating: String) {
+    override fun onDataPassed(
+        city: String,
+        season: String,
+        Date: AppCompatButton,
+        rating: String,
+        toString: String
+    ) {
 
     }
 }

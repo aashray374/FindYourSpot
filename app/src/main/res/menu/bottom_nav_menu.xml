@@ -4,16 +4,16 @@
     <item
         android:id="@+id/navigation_Details"
         android:icon="@drawable/ic_home_black_24dp"
-        android:title="@string/title_home" />
+        android:title="Details" />
 
     <item
         android:id="@+id/navigation_Hotels"
         android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="@string/title_dashboard" />
+        android:title="Hostel" />
 
     <item
         android:id="@+id/navigation_Flights"
         android:icon="@drawable/ic_notifications_black_24dp"
-        android:title="@string/title_notifications" />
+        android:title="Flights" />
 
 </menu>

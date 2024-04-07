@@ -56,7 +56,7 @@ class DetailActivity : AppCompatActivity() {
                     Toast.makeText(this, "Please Select a Date", Toast.LENGTH_SHORT).show()
                 }else{
                     startActivity(Intent(this,MainActivity::class.java))
-                    dataPassListener.onDataPassed(binding.city.text.toString() , season , binding.Date , binding.rating.text.toString() )
+                    dataPassListener.onDataPassed(binding.city.text.toString() , season , binding.Date , binding.rating.text.toString() , binding.scrCity.text.toString() )
                 }
             }
         }

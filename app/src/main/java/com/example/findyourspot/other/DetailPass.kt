@@ -5,8 +5,9 @@ import androidx.appcompat.widget.AppCompatButton
 interface DetailPass {
     fun onDataPassed(
         city: String,
-        season:String,
+        season: String,
         Date: AppCompatButton,
-        rating: String
+        rating: String,
+        scrCity: String
     )
 }
