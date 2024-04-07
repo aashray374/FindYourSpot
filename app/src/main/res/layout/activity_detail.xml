@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:background="@drawable/img"
     tools:context=".Activity.DetailActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -14,19 +14,16 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="100dp"
             android:layout_marginEnd="10dp"
-            android:layout_marginBottom="100dp"
-            android:backgroundTint="#00ffffff"
             app:cardElevation="20dp"
+            android:backgroundTint="#F1F6F9"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0">
+            app:cardCornerRadius="15dp"
+            android:layout_marginBottom="30dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -88,6 +85,24 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginHorizontal="20dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/startCity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="8dp"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:hint="Start City"
+                        android:inputType="text" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/Date"
@@ -97,6 +112,7 @@
                     android:layout_marginTop="20dp"
                     android:layout_marginHorizontal="20dp"
                     android:text="Date"
+                    android:backgroundTint="#00ADB5"
                     android:textColor="@color/white"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -107,6 +123,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"
+                    android:backgroundTint="#00ADB5"
                     android:text="Plan Your Trip"
                     android:textColor="@color/white"
                     android:textSize="20dp"

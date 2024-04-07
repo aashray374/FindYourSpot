@@ -9,6 +9,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/flightRv"
         android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
         android:layout_height="0dp"
         tools:listitem="@layout/flight_img_view"
         app:layout_constraintBottom_toBottomOf="parent"
