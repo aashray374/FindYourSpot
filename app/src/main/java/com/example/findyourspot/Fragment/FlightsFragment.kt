@@ -7,6 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatButton
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.findyourspot.Adapter.FlightsAdapter
+import com.example.findyourspot.Adapter.HotelAdapter
 import com.example.findyourspot.DataClass.FlightDetails
 import com.example.findyourspot.Interface.FlightService
 import com.example.findyourspot.databinding.FragmentFlightsBinding
@@ -18,6 +21,7 @@ import retrofit2.Response
 class FlightsFragment : Fragment(), DetailPass {
 
     private lateinit var binding: FragmentFlightsBinding
+    private lateinit var adapter: FlightsAdapter
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -31,15 +35,16 @@ class FlightsFragment : Fragment(), DetailPass {
 
     private fun getFlights(){
         val flight=FlightService.FlightInstance.getTransport("","","")
-        flight.enqueue(object : Callback<FlightDetails> {
-            override fun onResponse(call: Call<FlightDetails>, response: Response<FlightDetails>) {
-                val news=response.body()
-                if (news!=null){
-
-
+        flight.enqueue(object : Callback<List<FlightDetails>> {
+            override fun onResponse(call: Call<List<FlightDetails>>, response: Response<List<FlightDetails>>) {
+                val flights=response.body()
+                if (flights!=null){
+                    adapter = FlightsAdapter(requireContext(), flights)
+                    binding.flightsRv.adapter = adapter
+                    binding.flightsRv.layoutManager = LinearLayoutManager(requireContext())
                 }
             }
-            override fun onFailure(call: Call<FlightDetails>, t: Throwable) {
+            override fun onFailure(call: Call<List<FlightDetails>>, t: Throwable) {
                 Log.d("Thodi BT ho gyi hai","Error")
             }
 

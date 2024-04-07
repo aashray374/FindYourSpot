@@ -1,5 +1,6 @@
 package com.example.findyourspot.Interface
 
+import com.example.findyourspot.DataClass.FlightDetails
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -16,7 +17,7 @@ interface FlightInterface {
         @Query("destination") destination: String,
         @Query("StartCity") startCity:String,
         @Query("Date") date:String
-    ):Call<FlightList>
+    ):Call<List<FlightDetails>>
 }
 
 object FlightService{

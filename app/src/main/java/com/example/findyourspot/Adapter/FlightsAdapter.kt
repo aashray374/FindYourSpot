@@ -13,7 +13,7 @@ import com.example.findyourspot.R
 
 class FlightsAdapter(
     val context:Context,
-    val list:MutableList<FlightDetails>
+    val list:List<FlightDetails>
 ): RecyclerView.Adapter<FlightsAdapter.ViewHolder>() {
     class ViewHolder(view: View):RecyclerView.ViewHolder(view){
         val des: TextView = view.findViewById(R.id.des)

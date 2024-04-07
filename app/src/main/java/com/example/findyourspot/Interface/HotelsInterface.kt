@@ -1,6 +1,6 @@
 package com.example.findyourspot.Interface
 
-import com.example.findyourspot.DataClass.HotelsList
+import com.example.findyourspot.DataClass.HotelClass
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -15,7 +15,7 @@ interface HotelsInterface {
     @GET(" https://test.api.amadeus.com/v1/reference-data/locations/hotels/by-city?")
     fun getHotels(
         @Query("City") city:String,
-    ):Call<HotelsList>
+    ):Call<List<HotelClass>>
 
 }
 

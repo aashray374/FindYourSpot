@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatButton
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.findyourspot.Adapter.HotelAdapter
-import com.example.findyourspot.DataClass.HotelsList
+import com.example.findyourspot.DataClass.HotelClass
 import com.example.findyourspot.Interface.HotelService
 import com.example.findyourspot.databinding.FragmentHotelsBinding
 import com.example.findyourspot.other.DetailPass
@@ -36,17 +36,17 @@ class HotelsFragment : Fragment(), DetailPass {
 
     private fun getHotels() {
         val hotelService = HotelService.HotelInstance.getHotels("")
-        hotelService.enqueue(object : Callback<HotelsList> {
-            override fun onResponse(call: Call<HotelsList>, response: Response<HotelsList>) {
-                val hotelsList = response.body()
-                if (hotelsList != null) {
-                    adapter = HotelAdapter(requireContext(), hotelsList)
+        hotelService.enqueue(object : Callback<List<HotelClass>> {
+            override fun onResponse(call: Call<List<HotelClass>>, response: Response<List<HotelClass>>) {
+                val hotelClass = response.body()!!
+                if (hotelClass != null) {
+                    adapter = HotelAdapter(requireContext(), hotelClass)
                     binding.hotelrv.adapter = adapter
                     binding.hotelrv.layoutManager = LinearLayoutManager(requireContext())
                 }
             }
 
-            override fun onFailure(call: Call<HotelsList>, t: Throwable) {
+            override fun onFailure(call: Call<List<HotelClass>>, t: Throwable) {
                 Log.d("Thodi BT ho gyi hai", "Error")
             }
         })

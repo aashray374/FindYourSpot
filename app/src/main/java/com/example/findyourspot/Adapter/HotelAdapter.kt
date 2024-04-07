@@ -4,16 +4,14 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.findyourspot.DataClass.HotelClass
-import com.example.findyourspot.DataClass.HotelsList
 import com.example.findyourspot.R
 
 class HotelAdapter(
     val context: Context,
-    val list: MutableList<HotelsList>
+    val list: List<HotelClass>
 ): RecyclerView.Adapter<HotelAdapter.ViewHolder>() {
 
     inner class ViewHolder(view: View):RecyclerView.ViewHolder(view){
@@ -32,11 +30,10 @@ class HotelAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val hotelList = list[position]
-        for (hotel in hotelList.hotels) {
+        val hotel = list[position]
             holder.des.text = hotel.name
             holder.src.text = hotel.rating
             holder.price.text = hotel.price_per_night
-        }
+
     }
 }
