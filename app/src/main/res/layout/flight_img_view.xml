@@ -28,6 +28,7 @@
             android:padding="9dp">
 
             <ImageView
+                android:id="@+id/img"
                 android:layout_width="54dp"
                 android:layout_height="54dp" />
 

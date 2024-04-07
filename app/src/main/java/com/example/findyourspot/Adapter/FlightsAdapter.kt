@@ -16,10 +16,13 @@ class FlightsAdapter(
     val list:List<FlightDetails>
 ): RecyclerView.Adapter<FlightsAdapter.ViewHolder>() {
     class ViewHolder(view: View):RecyclerView.ViewHolder(view){
+
         val des: TextView = view.findViewById(R.id.des)
         val src: TextView = view.findViewById(R.id.src)
         val price: TextView = view.findViewById(R.id.price)
         val time: TextView = view.findViewById(R.id.time)
+        val date: TextView = view.findViewById(R.id.date)
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -37,6 +40,7 @@ class FlightsAdapter(
         holder.src.text = list[position].src
         holder.price.text = list[position].price
         holder.time.text = list[position].time
+
 
     }
 

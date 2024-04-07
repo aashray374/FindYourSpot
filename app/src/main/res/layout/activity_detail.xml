@@ -44,8 +44,6 @@
                         android:layout_height="wrap_content"
                         android:drawablePadding="8dp"
                         android:hint="Enter Your City Name"
-                        android:textColor="@color/white"
-                        android:textColorHint="@color/white"
                         android:inputType="text" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -62,8 +60,6 @@
                         android:layout_height="wrap_content"
                         android:drawablePadding="8dp"
                         android:hint="Enter Your des Name"
-                        android:textColor="@color/white"
-                        android:textColorHint="@color/white"
                         android:inputType="text" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -78,8 +74,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawablePadding="8dp"
-                        android:textColor="@color/white"
-                        android:textColorHint="@color/white"
                         android:hint="Rating"
                         android:inputType="text" />
 
@@ -96,8 +90,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawablePadding="8dp"
-                        android:textColor="@color/white"
-                        android:textColorHint="@color/white"
                         android:hint="Start City"
                         android:inputType="text" />
 

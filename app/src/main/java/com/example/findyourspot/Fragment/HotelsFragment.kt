@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
-import androidx.privacysandbox.tools.core.model.Method
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
@@ -35,6 +34,7 @@ class HotelsFragment : Fragment(),DetailPass {
     private lateinit var YourDate:AppCompatButton
     private lateinit var YourRating:String
     private lateinit var YourSeason:String
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -54,7 +54,7 @@ class HotelsFragment : Fragment(),DetailPass {
     }
 
     private fun fetchDataFromAPI() {
-        val url = "http://192.168.172.60:4000/hotel?city=Santorini"
+        val url = "http://192.168.172.60:4000/hotel?city=$YourDesti"
         val requestQueue = Volley.newRequestQueue(requireContext())
 
         val jsonObjectRequest = JsonObjectRequest(
