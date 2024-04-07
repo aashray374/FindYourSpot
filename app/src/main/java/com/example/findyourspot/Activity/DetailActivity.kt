@@ -26,7 +26,6 @@ class DetailActivity : AppCompatActivity() {
         val day = calendar.get(Calendar.DAY_OF_MONTH)
 
         var season:String
-
         binding.Date.setOnClickListener {
             val datePickerDialog = DatePickerDialog(
                 this,
